@@ -17,7 +17,7 @@ import com.example.demo.service.TodoService;
 public class TestController {
 	@Autowired
 	private TodoService service;
-
+	
 	@GetMapping("/test")
 	public ResponseEntity<?>testTodo(){
 		String str = service.testService();
@@ -25,5 +25,6 @@ public class TestController {
 		list.add(str);
 		ResponseDTO<String> response = ResponseDTO.<String>builder().data(list).build();
 		return ResponseEntity.ok().body(response);
-	}
+		}
+
 }
